@@ -4,6 +4,21 @@
   "parameters": {
     "ipaddress": {
       "value": "xxx.xxx.xxx.xxx"
+    },
+    "dsvmLinuxSize": {
+      "value": "Standard_NC6s_v3"
+    },
+    "dsvmWindowsSize": {
+      "value": "Standard_NC6s_v3"
+    },
+    "vmuser": {
+      "value": "adminuser"
+    },    
+    "vmpassword": {
+      "value" : "xxx"
+    },
+    "sshPublicKey": {
+      "value": "xxxx"
     }
   }
 }

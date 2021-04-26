@@ -1,4 +1,4 @@
-# Bicep sample (Ubunt VM ＋ Bastion)
+# Bicep sample (DSVM:Data Science Virtual Machine (Ubunt ＋ Windows Server) ＋ Bastion)
 
 ## Preparation
 1. Install az cli  
@@ -7,7 +7,13 @@ https://docs.microsoft.com/ja-jp/cli/azure/install-azure-cli
 https://github.com/Azure/bicep/blob/main/docs/installing.md#windows-installer
 1. Edit parameter File
 - azuredeploy.parameters.dev.json</br>
-xxx.xxx.xxx.xxx -> Your IP Address.
+  - require</br>
+  xxx.xxx.xxx.xxx -> Your IP Address.</br>
+  xxx(vmpassword)(At least 12 characters (uppercase, lowercase, and numbers)) </br>
+  xxxx (sshPublicKey) </br>
+  - option</br>
+  vmuser -> Your choice Virtual Machine User ID.</br>
+  Standard_NC6s_v3 -> Your choice Virtual Machine Size. </br>
 ```
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
@@ -15,9 +21,25 @@ xxx.xxx.xxx.xxx -> Your IP Address.
   "parameters": {
     "ipaddress": {
       "value": "xxx.xxx.xxx.xxx"
+    },
+    "dsvmLinuxSize": {
+      "value": "Standard_NC6s_v3"
+    },
+    "dsvmWindowsSize": {
+      "value": "Standard_NC6s_v3"
+    },
+    "vmuser": {
+      "value": "adminuser"
+    },    
+    "vmpassword": {
+      "value" : "xxx"
+    },
+    "sshPublicKey": {
+      "value": "xxxx"
     }
   }
 }
+
 ```
 
 ## Usage
